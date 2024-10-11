@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	//"time"
 )
@@ -32,6 +33,11 @@ func main() {
 	// i, _ := r.ReadString('\n') //사용 안하는 변수는 _
 	fmt.Print("Input your name : ")
 	name, err := in.ReadString('\n') //사용 안하는 변수는 _
-	fmt.Println(name)
-	fmt.Println(err)
+	// fmt.Println(name)
+	// fmt.Println(err, log.Fatal(err))
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(name)
+	}
 }
