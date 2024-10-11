@@ -48,6 +48,26 @@ func main() {
 	// var count int
 	// fmt.Println(count, i)
 
+	// fmt.Print("점수입력 : ")
+	// r := bufio.NewReader(os.Stdin)
+	// i, err := r.ReadString('\n')
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// i = strings.TrimSpace(i)                  // python strip
+	// score, err := strconv.ParseInt(i, 16, 32) // 문자열 값을 정수형(32비트)로 변환, 입력받은 값은 16진수로 처리 파라미터 (입력, 진수, 크기)
+
+	// if score >= 60 {
+	// 	fmt.Println("A")
+	// 	fmt.Printf("%d\n", score)
+
+	// } else {
+	// 	fmt.Println("BCDF")
+	// 	fmt.Printf("%d\n", score)
+
+	// }
+
 	fmt.Print("점수입력 : ")
 	r := bufio.NewReader(os.Stdin)
 	i, err := r.ReadString('\n')
@@ -58,14 +78,17 @@ func main() {
 	i = strings.TrimSpace(i)                  // python strip
 	score, err := strconv.ParseInt(i, 16, 32) // 문자열 값을 정수형(32비트)로 변환, 입력받은 값은 16진수로 처리 파라미터 (입력, 진수, 크기)
 
-	if score >= 60 {
-		fmt.Println("A")
-		fmt.Printf("%d\n", score)
-
-	} else {
-		fmt.Println("BCDF")
-		fmt.Printf("%d\n", score)
-		
+	if err != nil {
+		log.Fatal(err)
 	}
 
+	var aOrNot string
+	if score >= 60 {
+		aOrNot = "A"
+
+	} else {
+		aOrNot = "BCDF"
+	}
+
+	fmt.Print(aOrNot)
 }
