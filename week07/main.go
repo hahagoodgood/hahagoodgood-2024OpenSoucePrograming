@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 	//"time"
 )
 
@@ -29,15 +31,41 @@ func main() {
 	// // i, err := r.ReadString('\n') //사용 안하는 변수는 _
 	// fmt.Println(i)
 
-	in := bufio.NewReader(os.Stdin)
-	// i, _ := r.ReadString('\n') //사용 안하는 변수는 _
-	fmt.Print("Input your name : ")
-	name, err := in.ReadString('\n') //사용 안하는 변수는 _
-	// fmt.Println(name)
-	// fmt.Println(err, log.Fatal(err))
+	// in := bufio.NewReader(os.Stdin)
+	// // i, _ := r.ReadString('\n') //사용 안하는 변수는 _
+	// fmt.Print("Input your name : ")
+	// name, err := in.ReadString('\n') //사용 안하는 변수는 _
+	// // fmt.Println(name)
+	// // fmt.Println(err, log.Fatal(err))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// } else {
+	// 	fmt.Println(name)
+	// }
+
+	// var int int =1 //쉐도우 에러 int같은 자료 타임(예약어)을 변수명으로 사용시 에러 발생!!!
+	// var i int = 1
+	// var count int
+	// fmt.Println(count, i)
+
+	fmt.Print("점수입력 : ")
+	r := bufio.NewReader(os.Stdin)
+	i, err := r.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
-	} else {
-		fmt.Println(name)
 	}
+
+	i = strings.TrimSpace(i)                  // python strip
+	score, err := strconv.ParseInt(i, 16, 32) // 문자열 값을 정수형(32비트)로 변환, 입력받은 값은 16진수로 처리 파라미터 (입력, 진수, 크기)
+
+	if score >= 60 {
+		fmt.Println("A")
+		fmt.Printf("%d\n", score)
+
+	} else {
+		fmt.Println("BCDF")
+		fmt.Printf("%d\n", score)
+		
+	}
+
 }
