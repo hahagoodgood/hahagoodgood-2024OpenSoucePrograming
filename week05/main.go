@@ -13,7 +13,7 @@ func main() {
 	// var i int
 	// i = 55
 
-	f := 4.30
+	f := 4.30 //단축연산
 	i := 55
 
 	// var f float32 = 4.30
