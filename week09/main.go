@@ -40,9 +40,50 @@ func main() {
 
 /*
 
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"math/rand"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+)
 
+func main() {
+	rand.Seed(time.Now().Unix())
+	answer := rand.Intn(6) + 1
+	fmt.Printf("%d\n", answer)
 
- */
+	//숫자를 입력받는다
+	fmt.Print("숫자 입력 :")
+	r := bufio.NewReader(os.Stdin)
+	i, err := r.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// 입력받은 숫자를 정수로 변환
+	i = strings.TrimSpace(i)
+	guess, err := strconv.Atoi(i)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(guess)
+
+	// 입력 받은 숫자가 정답인지 확인
+	if answer == guess {
+		fmt.Print("정답입니다")
+	} else if answer > guess {
+		fmt.Println("입력하신 수는 정답보다 작은 수입니다. LOW")
+	} else {
+		fmt.Println("입력하신 수는 정답보다 큰 수입니다. HIGH")
+	}
+}
+
+}
+*/
 
 import (
 	"bufio"
@@ -57,28 +98,33 @@ import (
 
 func main() {
 	rand.Seed(time.Now().Unix())
-	answer := rand.Intn(6) + 1 
+	answer := rand.Intn(6) + 1
 	fmt.Printf("%d\n", answer)
 
-	fmt.Print("숫자 입력 :")
-	r := bufio.NewReader(os.Stdin)
-	i, err := r.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
+	//for 문을 이용하여 게임의 여러 기회 제공
+	for guesses := 0; guesses < 3; guesses++ {
+		fmt.Printf("%d번의 기회가 남았습니다. 숫자 입력 : ", 3-guesses)
+		r := bufio.NewReader(os.Stdin)
+		i, err := r.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		i = strings.TrimSpace(i)
+		guess, err := strconv.Atoi(i)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(guess)
+
+		if answer == guess {
+			fmt.Println("정답입니다!")
+			break
+		} else if answer > guess {
+			fmt.Println("입력하신 수는 정답보다 작은 수 입니다. LOW")
+		} else {
+			fmt.Println("입력하신 수는 정답보다 큰 수 입니다. HIGH")
+		}
 	}
 
-	i = strings.TrimSpace(i)
-	guess, err := strconv.Atoi(i)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(guess)
-
-	if answer == guess {
-		fmt.Print("정답입니다")
-	} else if answer > guess {
-		fmt.Println("입력하신 수는 정답보다 작은 수입니다. LOW")
-	} else {
-		fmt.Println("입력하신 수는 정답보다 큰 수입니다. HIGH")
-	}
 }
