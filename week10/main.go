@@ -43,7 +43,7 @@ func main() {
 	}
 } */
 
-
+// 오류!!: 1이 소수라 판단
 import (
 	"bufio"
 	"fmt"
@@ -72,14 +72,17 @@ func main() {
 	i = strings.TrimSpace(i)
 	n, err := strconv.Atoi(i)
 
-	counts := 0
+	// counts := 0//counts := 0
+	var isPrime bool = true   // 가독성 계선
 	for j := 2; j <= n; j++ { //2부터 입력된 수까지 반복
 		if n%j == 0 { //약수면
-			counts++ //나누어 떠러지는 횟수 카운트
+			//counts++ //나누어 떠러지는 횟수 카운트
+			isPrime = false
 		}
 	}
 
-	if counts == 0 { //나누어 떨어지는 수가 있으면 안됩
+	// if counts == 0 { //나누어 떨어지는 수가 있으면 안됩
+	if isPrime {
 		fmt.Printf("%d는(은) 소수입니다.", n)
 	} else {
 		fmt.Printf("%d는(은) 소수가 아닙니다.", n)
