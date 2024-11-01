@@ -192,6 +192,10 @@ func main() {
 	}
 }
 */
+
+/*
+//V2.0 Guess Game Final
+
 import (
 	"bufio"
 	"fmt"
@@ -243,5 +247,63 @@ func main() {
 		fmt.Printf("당신이 이겼습니다.")
 	} else {
 		fmt.Printf("당신이 졌습니다. 정답은 %d입니다", answer)
+	}
+}
+*/
+/* import (
+	"fmt"
+)
+
+func main() {
+	var result string
+	//Sprintf는 실행은 하지만 출력을 하지 않는다.
+	// 대신 입력한 함수를 String으로 반환한다.
+	result = fmt.Sprintf("%0.2f 나누기 %0.2f는 %0.2f 입니다.\n", 1.0, 3.0, 1.0/3.0)
+	fmt.Println(result)
+
+	//%5d를 하면 최소 5자리가 되도록 앞 칸을 비움
+	//%.5d를 하면 앞에 0으로 채움
+	i := 1
+	for i < 10 {
+		fmt.Printf("%5d\n", i)
+		fmt.Printf("%.5d\n", i)
+		i++
+	}
+
+	//%5f를 하면 최소 5자리가 되도록 앞 칸을 비움
+	//%.5d를 소수 점 뒷자리 5개 까지 출력
+	f := 12.3456
+	fmt.Printf("%.1f\n", f)
+	fmt.Printf("%.2f\n", f)
+	fmt.Printf("%.3f\n", f)
+	fmt.Printf("%.4f\n", f)
+	fmt.Printf("%5.2f\n", f)
+	fmt.Printf("%6.2f\n", f)
+	fmt.Printf("%7.2f\n", f)
+	fmt.Printf("%8.2f\n", f)
+	fmt.Printf("%9.2f\n", f)
+} */
+
+//func으로 함수 선언, 전역변수와 지역변수, return 값 사용, 
+/* func 함수명 (변수명 변수타입, 변수명 변수타입) 리턴값 타입{
+	
+
+	return 리턴값
+}
+*/
+
+import (
+	"fmt"
+)
+
+func main() {
+	var result string
+	result = fmt.Sprintf("%0.1f 나누기 %0.1f(은)는 %0.2f입니다\n", 1.0, 3.0, 1.0/3.0)
+	fmt.Print(result)
+
+	i := 1
+	for i <= 10 {
+		fmt.Printf("%d\n", i)
+		i++
 	}
 }
