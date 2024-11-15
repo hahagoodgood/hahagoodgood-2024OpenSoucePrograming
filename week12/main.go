@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"time"
+
+	"github.com/headfirstgo/keyboard"
 )
 
 func main() {
@@ -19,20 +20,29 @@ func main() {
 	// time.Unix(147920001, 0)}
 
 	// 줄바꿈시 뒤에는 무조건 쉽표가 필요하다
-	dates := [3]time.Time{time.Unix(1, 0),
-		time.Unix(0, 0),
-		time.Unix(147920001, 0),
+	// dates := [3]time.Time{time.Unix(1, 0),
+	// 	time.Unix(0, 0),
+	// 	time.Unix(147920001, 0),
+	// }
+
+	// // fmt.Println(dates[0], dates[1], dates[2])
+
+	// // fmt.Println(dates)
+
+	// // fmt.Printf("%#v\n", dates)
+
+	// // 포이치문 조작 방법!!
+	// for i, date := range dates {
+	// 	fmt.Println(i, date)
+	// }
+
+	var gpa [3]float64
+	// go get github.com/headfirstgo.keyboard
+	for i := 0; i < len(gpa); i++ {
+		fmt.Print("Input fleat number :")
+		gpa[i], _ = keyboard.GetFloat()
 	}
-
-	// fmt.Println(dates[0], dates[1], dates[2])
-
-	// fmt.Println(dates)
-
-	// fmt.Printf("%#v\n", dates)
-
-
-	// 포이치문 조작 방법!!
-	for i, v := range dates {
-		fmt.Println(i, v)
+	for index, value := range gpa {
+		fmt.Printf("%d %f\n", index, value)
 	}
 }
