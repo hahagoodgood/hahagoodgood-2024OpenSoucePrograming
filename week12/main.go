@@ -50,9 +50,27 @@ func main() {
 
 	// 슬라이스
 	// 슬라이스와 배열의 차이점이 뭐지?
-	var gpa [5]float64 = [5]float64{3.5, 4.1, 4.5, 3.9, 4.25}
-	gpa_slice := gpa[1:4]
-	fmt.Println(gpa_slice, reflect.TypeOf(gpa_slice))
-	fmt.Println(gpa, reflect.TypeOf(gpa))
+	// var gpa [5]float64 = [5]float64{3.5, 4.1, 4.5, 3.9, 4.25}
+	// gpa_slice := gpa[1:4]
+	// fmt.Println(gpa_slice, reflect.TypeOf(gpa_slice))
+	// fmt.Println(gpa, reflect.TypeOf(gpa))
+
+	// 슬라이스의 3가지 기법
+	var gpaSlice []float64
+	gpaSlice = make([]float64, 3)
+	gpaSlice[0] = 4.1
+	gpaSlice[1] = 4.5
+	gpaSlice[2] = 3.9
+	fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
+
+	// Create a slice by slice literal
+	// gpaSlice := []float64{4.1, 4.5, 3.9} // slice literal
+	// fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
+
+	// Create a slice by slicing an existing array
+	// gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23} // array := array literal
+	// fmt.Println(gpas, reflect.TypeOf(gpas))
+	// gpaSlice := gpas[1:4] // slice := slicing array
+	// fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 
 }
