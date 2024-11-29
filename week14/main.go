@@ -1,7 +1,5 @@
 package main
 
-
-
 // import (
 // 	"fmt"
 // 	"github.com/headfirstgo/datafile"
@@ -53,9 +51,6 @@ package main
 // 	}
 // }
 
-
-
-
 // import "fmt"
 // func main(){
 // 	ages := make(map[string]int)
@@ -79,17 +74,37 @@ package main
 // 	}
 // }
 
+// import "fmt"
+
+// func main(){
+// 	var student struct {
+// 		id int
+// 		name string
+// 		grade float32
+// 	}
+// 	student.id = 202044005
+// 	student.name = "kim dong hyuk"
+// 	student.grade = 4.5
+// 	fmt.Println(student.grade)
+// }
 
 import "fmt"
 
-func main(){
-	var student struct {
-		id int
-		name string
-		grade float32
-	}
-	student.id = 202044005
-	student.name = "kim dong hyuk"
-	student.grade = 4.5
-	fmt.Println(student.grade)
+type student struct {
+	id    int
+	name  string
+	grade float32
+}
+
+func main() {
+	var student1 student
+	student1.id = 202044005
+	student1.name = "kim dong hyuk"
+	student1.grade = 4.5
+	fmt.Println(student1.grade)
+	var student2 student
+	student2.id = 202044004
+	student2.name = "an tea min"
+	student2.grade = 4.5
+	fmt.Println(student2.grade)
 }
